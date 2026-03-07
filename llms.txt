@@ -1,0 +1,15 @@
+# AI Dev Skills
+
+> Claude Code plugin marketplace with developer productivity skills
+
+## Skills
+
+### MCP Config Fix
+Fixes UTF-8 BOM issue in Claude Desktop MCP config on Windows. The most common reason MCP servers don't load on Windows.
+
+### Prompt Generator
+Generate professional Claude Code prompts with Agent Teams patterns, multi-phase workflows, and structured templates.
+
+## Installation
+
+/plugin marketplace add alihsh0/ai-dev-skills

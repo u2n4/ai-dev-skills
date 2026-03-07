@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ai-dev-skills",
+  "version": "1.0.0",
+  "description": "Claude Code plugin marketplace — MCP config fixer + professional prompt generator skills",
+  "owner": {
+    "name": "alihsh0",
+    "email": "alihsh0@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "mcp-config-fix",
+      "description": "Fix UTF-8 BOM issue in Claude Desktop MCP config on Windows",
+      "version": "1.0.0",
+      "source": "./plugins/mcp-config-fix",
+      "category": "productivity"
+    },
+    {
+      "name": "prompt-generator",
+      "description": "Professional Claude Code prompt generator with Agent Teams patterns",
+      "version": "1.0.0",
+      "source": "./plugins/prompt-generator",
+      "category": "development"
+    }
+  ]
+}
