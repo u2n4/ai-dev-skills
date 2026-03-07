@@ -1,0 +1,9 @@
+{
+  "name": "mcp-config-fix",
+  "version": "1.0.0",
+  "description": "Fix UTF-8 BOM issue in Claude Desktop MCP config on Windows",
+  "author": {
+    "name": "alihsh0",
+    "email": "alihsh0@users.noreply.github.com"
+  }
+}

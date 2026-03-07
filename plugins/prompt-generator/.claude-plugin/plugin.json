@@ -1,0 +1,9 @@
+{
+  "name": "prompt-generator",
+  "version": "1.0.0",
+  "description": "Professional Claude Code prompt generator with Agent Teams patterns",
+  "author": {
+    "name": "alihsh0",
+    "email": "alihsh0@users.noreply.github.com"
+  }
+}
