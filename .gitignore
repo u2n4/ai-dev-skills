@@ -1,9 +1,24 @@
+# Python (in case plugins add Python tests later)
 __pycache__/
 *.pyc
-.env
-*.log
+.pytest_cache/
+.ruff_cache/
+.pyright/
+.mypy_cache/
+
+# Virtual envs
 .venv/
 venv/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# OS
 .DS_Store
 Thumbs.db
+
+# Node / misc
 node_modules/
