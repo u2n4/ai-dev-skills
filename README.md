@@ -29,7 +29,7 @@ AI Dev Skills is a Claude Code plugin marketplace that provides developer produc
 ## Installation
 
 ```
-/plugin marketplace add alihsh0/ai-dev-skills
+/plugin marketplace add u2n4/ai-dev-skills
 ```
 
 Then browse and install individual skills from the marketplace.
