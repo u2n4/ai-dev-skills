@@ -105,3 +105,7 @@ MIT — see [LICENSE](LICENSE).
 ## Support
 
 If you find this useful, please star this repository!
+
+---
+
+Made with ❤️ in the Eastern Province of Saudi Arabia.
