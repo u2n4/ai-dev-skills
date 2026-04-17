@@ -291,6 +291,24 @@ Stage 1 Agent → Stage 2 Agent → Stage 3 Agent → Verification Agent
 - Don't skip the verification phase
 - Don't use vague instructions ("make it better")
 
+<!-- SECURITY: HIGH-3.4 — API key exposure prevention in generated prompts -->
+## ⚠️ Security Constraints for Generated Prompts
+
+When generating prompts, **NEVER** include:
+- Real API keys, tokens, or passwords (use `${ENV_VAR}` placeholders instead)
+- Hardcoded credentials in any example code blocks
+- Instructions that ask users to paste secrets into chat
+- Commands that expose `.env` files, SSH keys, or credential stores
+
+Always include this constraint in generated prompts that involve APIs:
+```markdown
+<constraints>
+- NEVER hardcode API keys — use environment variables (e.g., ${API_KEY})
+- NEVER commit secrets to version control
+- Validate all external inputs before processing
+</constraints>
+```
+
 ## Quality Checklist
 
 Before sending a Claude Code prompt:
@@ -301,3 +319,4 @@ Before sending a Claude Code prompt:
 - [ ] Verification checkpoint is defined
 - [ ] Agent team roles don't overlap (if using teams)
 - [ ] Output format is specified
+- [ ] No API keys, tokens, or secrets in any example code <!-- SECURITY: HIGH-3.4 -->

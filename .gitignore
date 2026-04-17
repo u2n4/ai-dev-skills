@@ -22,3 +22,19 @@ Thumbs.db
 
 # Node / misc
 node_modules/
+
+# SECURITY: HIGH-3.4 — Prevent accidental secret leakage
+.env.*
+.env.local
+.env.production
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+*secret*
+*.credential
+id_rsa
+id_ed25519
+*.gpg
