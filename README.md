@@ -100,10 +100,10 @@ ai-dev-skills/
 See [SECURITY.md](SECURITY.md) for full security policy, vulnerability reporting, and the threat model for this project.
 
 **Important warnings:**
-- **Forked versions** of this marketplace may contain modified skill files with different behavior. Always verify you are installing from `alihsh0/ai-dev-skills`.
+- **Forked versions** of this marketplace may contain modified skill files with different behavior. Always verify you are installing from `u2n4/ai-dev-skills`.
 - **Never run commands** from any skill without reading them first.
 - **Never paste API keys** directly into config examples — use environment variables.
-- Report security issues privately via [GitHub Security Advisories](https://github.com/alihsh0/ai-dev-skills/security/advisories/new).
+- Report security issues privately via [GitHub Security Advisories](https://github.com/u2n4/ai-dev-skills/security/advisories/new).
 
 ## Contributing
 

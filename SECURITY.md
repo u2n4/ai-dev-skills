@@ -13,7 +13,7 @@
 If you discover a security vulnerability in this project:
 
 1. **DO NOT** open a public issue
-2. Report privately via [GitHub Security Advisories](https://github.com/alihsh0/ai-dev-skills/security/advisories/new)
+2. Report privately via [GitHub Security Advisories](https://github.com/u2n4/ai-dev-skills/security/advisories/new)
 3. Include a clear description, reproduction steps, and potential impact
 4. You will receive a response within 48 hours
 
@@ -58,7 +58,7 @@ After installing any plugin from this marketplace:
 
 1. **Review the SKILL.md** — read all instructions before running any command
 2. **Check permissions** — verify `plugin.json` permissions match expected behavior
-3. **Verify source** — ensure the plugin was installed from `alihsh0/ai-dev-skills`
+3. **Verify source** — ensure the plugin was installed from `u2n4/ai-dev-skills`
 4. **Check for forks** — forked versions may contain modifications; always prefer the original
 
 ## Security Checklist for Contributors
