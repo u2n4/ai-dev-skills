@@ -70,6 +70,22 @@ Your `plugin.json` should follow this structure:
 - Use generic placeholder paths (e.g., `C:\Path\To\...`)
 - Report security issues privately via GitHub Security Advisories
 
+<!-- SECURITY: LOW-3.7 — Security review checklist for contributors -->
+### ⚠️ Security Review Checklist
+
+Before submitting a Pull Request, verify ALL of the following:
+
+- [ ] No hardcoded API keys, tokens, passwords, or secrets in any file
+- [ ] All sensitive values use `${ENV_VAR}` placeholder format
+- [ ] No commands that download files from the internet
+- [ ] No commands that execute remote scripts or arbitrary code
+- [ ] No commands that access files outside the skill's declared scope
+- [ ] `plugin.json` permissions accurately reflect what the skill does
+- [ ] No instructions that could trick users into exposing credentials
+- [ ] JSON examples are valid and parseable
+- [ ] Process termination commands only target intended applications
+- [ ] Backup instructions are included before any destructive operations
+
 ## Style Guide
 
 - Use clear, concise language in skill instructions

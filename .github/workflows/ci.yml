@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install check-jsonschema
+        run: uv tool install check-jsonschema
+
+      - name: Validate JSON files (syntax)
+        # `jq empty` reads + parses + discards. Exits non-zero on parse error.
+        # Filename is passed as an argument — no shell interpolation into a
+        # script, so filenames with shell metacharacters cannot inject code.
+        run: |
+          set -e
+          while IFS= read -r -d '' f; do
+            echo "validating $f"
+            jq empty "$f"
+          done < <(find . -name "*.json" -not -path "./node_modules/*" -print0)
+
+      - name: Validate marketplace.json + plugin.json structure
+        # All structural assertions go through jq filters with the filename
+        # passed as a positional argument — no Python -c with shell-interpolated
+        # filenames, so a maliciously named file cannot inject code.
+        run: |
+          set -e
+          while IFS= read -r -d '' f; do
+            jq -e 'has("name") and has("version")' "$f" > /dev/null \
+              || { echo "missing name or version in $f"; exit 1; }
+            echo "ok $f"
+          done < <(find . -name "plugin.json" -not -path "./node_modules/*" -print0)
+          jq -e '(.plugins | type == "array") and (.plugins | length > 0)' \
+            .claude-plugin/marketplace.json > /dev/null \
+            || { echo "marketplace has no plugins"; exit 1; }
+          echo "ok marketplace.json with $(jq '.plugins | length' .claude-plugin/marketplace.json) plugins"

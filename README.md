@@ -29,7 +29,7 @@ AI Dev Skills is a Claude Code plugin marketplace that provides developer produc
 ## Installation
 
 ```
-/plugin marketplace add alihsh0/ai-dev-skills
+/plugin marketplace add u2n4/ai-dev-skills
 ```
 
 Then browse and install individual skills from the marketplace.
@@ -94,6 +94,17 @@ ai-dev-skills/
 └── CONTRIBUTING.md
 ```
 
+<!-- SECURITY: LOW-3.7 — Security section in README -->
+## ⚠️ Security
+
+See [SECURITY.md](SECURITY.md) for full security policy, vulnerability reporting, and the threat model for this project.
+
+**Important warnings:**
+- **Forked versions** of this marketplace may contain modified skill files with different behavior. Always verify you are installing from `u2n4/ai-dev-skills`.
+- **Never run commands** from any skill without reading them first.
+- **Never paste API keys** directly into config examples — use environment variables.
+- Report security issues privately via [GitHub Security Advisories](https://github.com/u2n4/ai-dev-skills/security/advisories/new).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -105,3 +116,7 @@ MIT — see [LICENSE](LICENSE).
 ## Support
 
 If you find this useful, please star this repository!
+
+---
+
+Made with ❤️ in the Eastern Province of Saudi Arabia.
