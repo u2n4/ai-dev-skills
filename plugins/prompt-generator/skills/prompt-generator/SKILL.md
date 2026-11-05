@@ -1,6 +1,6 @@
 ---
 name: prompt-generator
-description: Generate professional, structured prompts for Claude Code with Agent Teams patterns, multi-phase workflows, and skill-aware orchestration. Use when users need to create complex Claude Code prompts, set up agent teams, design multi-step workflows, or craft effective instructions for Claude Code projects.
+description: Generate professional, structured prompts for Claude Code with Agent Teams patterns, multi-phase workflows. Use when users need to create complex Claude Code prompts, set up agent teams, design multi-step workflows, or craft effective instructions for Claude Code projects.
 ---
 
 # Claude Code Prompt Generator
@@ -12,14 +12,13 @@ Activate when the user asks to:
 - Set up an Agent Team for a project
 - Design a multi-phase workflow
 - Generate a professional Claude Code instruction set
-- Build a CLAUDE.md for a project
 - Create task-specific prompts with proper structure
 
 ## Prompt Architecture
 
 ### The 5-Layer Prompt Structure
 
-Every professional Claude Code prompt should include these layers:
+Every professional Claude Code prompt should include these layers. Layers 1-3 belong in every prompt; Layers 4 and 5 are added per task. The templates below are abbreviated and stop at Layer 3, so append a Layer 5 verification checkpoint before sending:
 
 #### Layer 1: Context & Role
 Define WHO Claude is and WHAT the project context is.
@@ -244,6 +243,12 @@ For each endpoint:
 - Pagination for list endpoints
 - Request validation at boundary
 </requirements>
+
+<constraints>
+- NEVER hardcode API keys — use environment variables (e.g., ${API_KEY})
+- NEVER commit secrets to version control
+- Validate all external inputs before processing
+</constraints>
 ```
 
 ## Agent Team Patterns

@@ -56,7 +56,7 @@ Fixes the UTF-8 BOM issue that prevents Claude Desktop from loading MCP servers 
 
 ### Prompt Generator
 
-Generate professional, structured prompts for Claude Code with Agent Teams patterns, multi-phase workflows, and skill-aware orchestration.
+Generate professional, structured prompts for Claude Code with Agent Teams patterns, multi-phase workflows.
 
 **Triggers:**
 - "Create a Claude Code prompt"
