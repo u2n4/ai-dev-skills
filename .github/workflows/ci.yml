@@ -10,15 +10,12 @@ jobs:
   validate-json:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v10
         with:
           python-version: "3.12"
-
-      - name: Install check-jsonschema
-        run: uv tool install check-jsonschema
 
       - name: Validate JSON files (syntax)
         # `jq empty` reads + parses + discards. Exits non-zero on parse error.
@@ -31,18 +28,5 @@ jobs:
             jq empty "$f"
           done < <(find . -name "*.json" -not -path "./node_modules/*" -print0)
 
-      - name: Validate marketplace.json + plugin.json structure
-        # All structural assertions go through jq filters with the filename
-        # passed as a positional argument — no Python -c with shell-interpolated
-        # filenames, so a maliciously named file cannot inject code.
-        run: |
-          set -e
-          while IFS= read -r -d '' f; do
-            jq -e 'has("name") and has("version")' "$f" > /dev/null \
-              || { echo "missing name or version in $f"; exit 1; }
-            echo "ok $f"
-          done < <(find . -name "plugin.json" -not -path "./node_modules/*" -print0)
-          jq -e '(.plugins | type == "array") and (.plugins | length > 0)' \
-            .claude-plugin/marketplace.json > /dev/null \
-            || { echo "marketplace has no plugins"; exit 1; }
-          echo "ok marketplace.json with $(jq '.plugins | length' .claude-plugin/marketplace.json) plugins"
+      - name: Schema tests (manifests and SKILL.md frontmatter)
+        run: uv run --with pyyaml==6.0.2 python -m unittest discover -s tests -v
