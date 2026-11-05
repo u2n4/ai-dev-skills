@@ -12,6 +12,5 @@
     "process:stop_claude_desktop",
     "filesystem:list_appdata_claude",
     "filesystem:backup_config"
-  ],
-  "integrity_hash": "sha256:UPDATE_ON_RELEASE"
+  ]
 }

@@ -23,6 +23,6 @@ This is a static plugin marketplace with no executable code or runtime server. S
 - **API keys**: All examples use `${ENV_VAR}` placeholders — never real keys
 - **Command scope**: MCP Config Fix only modifies `claude_desktop_config.json` in `%APPDATA%\Claude\`
 - **Process safety**: Process termination commands only target Claude Desktop, never Claude Code
-- **Integrity**: Plugin manifests include permissions declarations and integrity hash fields
+- **Integrity**: Plugin manifests declare `permissions`; this repo does not verify content hashes
 - **Forks**: Only trust plugins from the original `u2n4/ai-dev-skills` repository
 - **Full policy**: See SECURITY.md for the complete security policy
