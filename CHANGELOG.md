@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- `tests/test_manifests.py`: schema tests for the marketplace and plugin manifests and every `SKILL.md` frontmatter (valid YAML, required `name` and `description`, quoted `description` when it contains ": ", manifest source paths exist). Run in CI.
+
+### Changed
+- GitHub Actions pinned to current majors: `actions/checkout@v7`, `astral-sh/setup-uv@v10`
+- CI JSON structure checks replaced by `tests/test_manifests.py`; the unused `check-jsonschema` install step is removed
+
+### Removed
+- `integrity_hash` from both `plugin.json` files and `_security_note` from `marketplace.json`. Nothing read the hash, and Claude Code ignores unknown manifest keys (it warns in `claude plugin validate`). SECURITY.md and llms.txt no longer claim hash verification.
+
+### Fixed
+- prompt-generator: API template now includes the `<constraints>` block the skill requires for API prompts
+- prompt-generator: Layers 4-5 note clarifies that the abbreviated templates stop at Layer 3
+- prompt-generator: removed the `Build a CLAUDE.md` trigger, which had no content behind it, and the "skill-aware orchestration" claim, which the skill does not implement
+
 ## [1.1.0] - 2026-04-17
 
 ### Added
