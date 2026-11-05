@@ -23,6 +23,5 @@
       "source": "./plugins/prompt-generator",
       "category": "development"
     }
-  ],
-  "_security_note": "After installation, verify plugin integrity by checking file hashes against the published release. See SECURITY.md for details."
+  ]
 }

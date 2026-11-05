@@ -9,6 +9,5 @@
   "permissions": [
     "read:project_files",
     "generate:prompt_text"
-  ],
-  "integrity_hash": "sha256:UPDATE_ON_RELEASE"
+  ]
 }

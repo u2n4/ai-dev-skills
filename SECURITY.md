@@ -33,7 +33,6 @@ This is a **static plugin marketplace** — there is no runtime server, no execu
 
 ### Plugin Manifest Integrity
 - Each `plugin.json` declares explicit `permissions` for what the skill can do
-- `integrity_hash` fields should be verified against published release hashes
 - `marketplace.json` includes `last_reviewed` date for audit trail
 
 ### Command Safety (mcp-config-fix)
